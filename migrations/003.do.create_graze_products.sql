@@ -6,13 +6,13 @@ CREATE TABLE products (
 
 CREATE TYPE product_category AS ENUM
 (
-    'Fruit',
-    'Vegetable',
-    'Nuts & Grains',
-    'Poultry',
-    'Meat',
-    'Seafood',
-    'Other'
+    'fruit',
+    'vegetable',
+    'nuts and grains',
+    'poultry',
+    'meat',
+    'seafood',
+    'other'
 );
 
 ALTER TABLE products

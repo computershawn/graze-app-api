@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "graze-app-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,10 @@
     "start": "node src/server.js",
     "predeploy": "npm audit && npm run migrate-production",
     "deploy": "git push heroku master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/computershawn/graze-app-api.git"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +29,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.11.0",
     "postgrator-cli": "^3.1.0",
+    "winston": "^3.2.1",
     "xss": "^1.0.6"
   },
   "devDependencies": {

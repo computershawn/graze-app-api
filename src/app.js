@@ -11,14 +11,18 @@ const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';
 
-// const validateBearerToken = require('./validate-bearer-token');
-const notesRouter = require('./notes/notes-router');
-const foldersRouter = require('./folders/folders-router');
+const validateBearerToken = require('./validate-bearer-token');
+// const notesRouter = require('./notes/notes-router');
+// const foldersRouter = require('./folders/folders-router');
+const marketsRouter = require('./markets/markets-router');
+const productsRouter = require('./products/products-router');
+const vendorsRouter = require('./vendors/vendors-router');
+const pricelistRouter = require('./pricelist/pricelist-router');
 
 app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
-// app.use(validateBearerToken)
+app.use(validateBearerToken)
 
 
 app.use(morgan(morganOption))
@@ -29,8 +33,12 @@ app.get('/', (req, res) => {
   res.send('Hello, world!')
 })
 
-app.use('/api/notes', notesRouter)
-app.use('/api/folders', foldersRouter)
+// app.use('/api/notes', notesRouter)
+// app.use('/api/folders', foldersRouter)
+app.use('/api/markets', marketsRouter)
+app.use('/api/products', productsRouter)
+app.use('/api/vendors', vendorsRouter)
+app.use('/api/pricelist', pricelistRouter)
 
 app.use(function errorHandler(error, req, res, next) {
   let response;

@@ -4,5 +4,5 @@ CREATE TABLE vendors (
     vendor_description TEXT NOT NULL,
     market_stall TEXT NOT NULL,
     market_id INTEGER
-        REFERENCES markets(id) ON DELETE CASCADE NOT NULL
+        REFERENCES markets(id) ON DELETE RESTRICT NOT NULL
 );
